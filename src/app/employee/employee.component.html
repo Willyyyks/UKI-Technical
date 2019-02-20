@@ -1,0 +1,21 @@
+<h2>
+  Add Employee
+</h2>
+
+<a routerLink = "/"> back </a>
+
+<form id = "formNewEmployee" name = "formNewEmployee" #employeeData = "ngForm" (ngSubmit) = "addNewEmployee(employeeData.value)">
+<ul>
+  <p><label>Employee ID: </label><br>
+  <input type = "text" name="id" id="id" placeholder="id" ngModel><br></p>
+  <p><label>Name: </label><br>
+  <input type = "text" name="name" id="name" placeholder="name" ngModel><br></p>
+  <p><label>Department: </label><br>
+  <input type = "text" name="department" id="department" placeholder="department" ngModel><br></p>
+
+  <input type="submit" value = "Add Employee">
+</ul>
+</form>
+
+<br>
+<h3 *ngIf = "isAdded" >{{confirmationString}}</h3>

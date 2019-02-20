@@ -1,0 +1,22 @@
+<h2>
+  Edit Employee
+</h2>
+
+<a routerLink = "/"> back </a>
+
+<p *ngIf = "!exist">
+  Employee doesn't exist
+</p>
+
+<form id = "formNewEmployee" name = "formNewEmployee" #employeeData = "ngForm" (ngSubmit) = "updateEmployee(employeeData.value)">
+<ul>  
+  <p><label>Employee ID: </label><br>
+  <input type = "text" name="id" id="id" placeholder="id" [(ngModel)] = "data.id" ngModel><br></p>
+  <p><label>Name: </label><br>
+  <input type = "text" name="name" id="name" placeholder="name" [(ngModel)] = "data.name" ngModel><br></p>
+  <p><label>Department: </label><br>
+  <input type = "text" name="department" id="department" [(ngModel)] = "data.department" placeholder="department" ngModel><br></p>
+  <input type="submit" value = "Edit">
+</ul>
+</form>
+
